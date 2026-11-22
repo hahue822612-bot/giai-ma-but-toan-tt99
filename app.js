@@ -16,6 +16,7 @@
   const state = {
     loading: true,
     loadError: '',
+    flatLayout: false,
     config: null,
     accountsData: null,
     stageCache: {},
@@ -283,10 +284,36 @@
   // =========================================================================
   // 3. DATA FETCHING
   // =========================================================================
+  function baseName(path) {
+    const parts = String(path || '').split('/');
+    return parts[parts.length - 1] || '';
+  }
+
   async function fetchJson(path) {
-    const res = await fetch(toRel(path), { cache: 'no-cache' });
-    if (!res.ok) throw new Error('HTTP ' + res.status + ' (' + path + ')');
-    return await res.json();
+    const rel = toRel(path);
+    const flat = './' + baseName(path);
+    const candidates = (state.flatLayout && flat !== rel)
+      ? [flat, rel]
+      : (flat !== rel ? [rel, flat] : [rel]);
+    let lastErr = null;
+    for (let i = 0; i < candidates.length; i++) {
+      const url = candidates[i];
+      try {
+        const res = await fetch(url, { cache: 'no-cache' });
+        if (res.ok) {
+          const text = await res.text();
+          const trimmed = text.trim();
+          if (trimmed && !trimmed.startsWith('<')) {
+            if (url === flat && flat !== rel) state.flatLayout = true;
+            return JSON.parse(trimmed);
+          }
+        }
+        lastErr = new Error('HTTP ' + res.status + ' (' + url + ')');
+      } catch (e) {
+        lastErr = e;
+      }
+    }
+    throw lastErr || new Error('Cannot fetch ' + path);
   }
 
   async function initApp() {
@@ -1429,7 +1456,8 @@
     });
 
     const groups = Object.keys(ad.meta.groups || {}).sort();
-    const pdfHref = toRel((state.config.resources && state.config.resources.accountsPdf) || './assets/He_thong_tai_khoan_TT99_2025.pdf');
+    const rawPdfPath = (state.config.resources && state.config.resources.accountsPdf) || './assets/He_thong_tai_khoan_TT99_2025.pdf';
+    const pdfHref = state.flatLayout ? ('./' + baseName(rawPdfPath)) : toRel(rawPdfPath);
 
     const rowsHtml = filtered.length === 0
       ? '<div style="padding:32px;text-align:center;color:var(--text-muted);font-size:0.9rem">Không tìm thấy tài khoản nào khớp từ khóa hoặc bộ lọc.</div>'
