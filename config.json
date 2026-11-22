@@ -1,0 +1,337 @@
+{
+  "version": "2026.11.22-tt99-clean",
+  "regulation": "Thông tư 99/2025/TT-BTC (ban hành 27/10/2025, hiệu lực từ 01/01/2026)",
+  "brand": {
+    "org1": "TRƯỜNG CAO ĐẲNG NGHỀ AN GIANG",
+    "org2": "KHOA KINH TẾ - DU LỊCH - CÔNG NGHỆ THỜI TRANG",
+    "org3": "BỘ MÔN KẾ TOÁN DOANH NGHIỆP",
+    "title": "GIẢI MÃ BÚT TOÁN DOANH NGHIỆP",
+    "slogan": "“NHÌN NGHIỆP VỤ – BẮT CHUẨN NỢ, CÓ”",
+    "logo": ""
+  },
+  "programRules": {
+    "TC": {
+      "label": "Trung cấp (TC)",
+      "includeLevels": [
+        "TC",
+        "BOTH"
+      ]
+    },
+    "CD": {
+      "label": "Cao đẳng (CĐ)",
+      "includeLevels": [
+        "CD",
+        "BOTH"
+      ]
+    }
+  },
+  "scoring": {
+    "scaleMax": 10,
+    "decimalPlaces": 1,
+    "displayMode": "both_score10_and_title",
+    "titles": [
+      {
+        "minScore10": 9.5,
+        "minPercent": 95,
+        "icon": "👑",
+        "name": "Bậc thầy định khoản",
+        "color": "#b45309"
+      },
+      {
+        "minScore10": 8.5,
+        "minPercent": 85,
+        "icon": "🏆",
+        "name": "Chuyên viên kế toán",
+        "color": "#1d4ed8"
+      },
+      {
+        "minScore10": 7.0,
+        "minPercent": 70,
+        "icon": "🥇",
+        "name": "Kế toán viên thực hành",
+        "color": "#047857"
+      },
+      {
+        "minScore10": 5.0,
+        "minPercent": 50,
+        "icon": "📈",
+        "name": "Học viên triển vọng",
+        "color": "#0369a1"
+      },
+      {
+        "minScore10": 0.0,
+        "minPercent": 0,
+        "icon": "🎓",
+        "name": "Tân binh kế toán",
+        "color": "#475569"
+      }
+    ]
+  },
+  "resources": {
+    "accountsJson": "data/accounts-tt99.json",
+    "accountsPdf": "assets/He_thong_tai_khoan_TT99_2025.pdf"
+  },
+  "stages": [
+    {
+      "stage": 1,
+      "file": "data/ch01.json",
+      "icon": "📘",
+      "name": "Tổng quan về kế toán tài chính",
+      "desc": "Nguyên tắc kế toán, VAS và chế độ kế toán, phương trình kế toán.",
+      "totalQuestions": 104,
+      "tcQuestions": 58,
+      "cdQuestions": 58,
+      "keyAccounts": [
+        "111",
+        "112",
+        "131",
+        "152",
+        "156",
+        "211",
+        "242",
+        "331",
+        "338",
+        "411",
+        "421",
+        "511",
+        "632",
+        "642",
+        "821",
+        "911"
+      ]
+    },
+    {
+      "stage": 2,
+      "file": "data/ch02.json",
+      "icon": "💵",
+      "name": "Kế toán vốn bằng tiền và các khoản ứng trước",
+      "desc": "Tiền mặt, tiền gửi không kỳ hạn, tạm ứng và thanh toán tạm ứng.",
+      "totalQuestions": 100,
+      "tcQuestions": 65,
+      "cdQuestions": 66,
+      "keyAccounts": [
+        "111",
+        "112",
+        "113",
+        "128",
+        "131",
+        "138",
+        "141",
+        "244",
+        "331",
+        "338",
+        "344",
+        "413"
+      ]
+    },
+    {
+      "stage": 3,
+      "file": "data/ch03.json",
+      "icon": "📦",
+      "name": "Kế toán vật liệu và công cụ, dụng cụ",
+      "desc": "Nhập, xuất vật liệu, công cụ dụng cụ; tính giá hàng tồn kho.",
+      "totalQuestions": 126,
+      "tcQuestions": 74,
+      "cdQuestions": 74,
+      "keyAccounts": [
+        "133",
+        "138",
+        "151",
+        "152",
+        "153",
+        "242",
+        "331",
+        "333",
+        "338"
+      ]
+    },
+    {
+      "stage": 4,
+      "file": "data/ch04.json",
+      "icon": "🏭",
+      "name": "Kế toán tài sản cố định",
+      "desc": "Tăng, giảm, khấu hao và thanh lý tài sản cố định.",
+      "totalQuestions": 130,
+      "tcQuestions": 89,
+      "cdQuestions": 87,
+      "keyAccounts": [
+        "211",
+        "212",
+        "213",
+        "214",
+        "215",
+        "217",
+        "241",
+        "711",
+        "811"
+      ]
+    },
+    {
+      "stage": 5,
+      "file": "data/ch05.json",
+      "icon": "👥",
+      "name": "Kế toán tiền lương và các khoản trích theo lương",
+      "desc": "Tính lương, trích bảo hiểm và kinh phí công đoàn, thanh toán lương.",
+      "totalQuestions": 123,
+      "tcQuestions": 82,
+      "cdQuestions": 82,
+      "keyAccounts": [
+        "334",
+        "335",
+        "338",
+        "622",
+        "627",
+        "641",
+        "642"
+      ]
+    },
+    {
+      "stage": 6,
+      "file": "data/ch06.json",
+      "icon": "🧾",
+      "name": "Kế toán các khoản nợ phải trả",
+      "desc": "Công nợ người bán, vay, thuế GTGT và các khoản phải nộp.",
+      "totalQuestions": 100,
+      "tcQuestions": 65,
+      "cdQuestions": 65,
+      "keyAccounts": [
+        "331",
+        "332",
+        "333",
+        "335",
+        "336",
+        "337",
+        "338",
+        "341",
+        "343",
+        "344",
+        "347",
+        "352",
+        "353",
+        "356",
+        "357"
+      ]
+    },
+    {
+      "stage": 7,
+      "file": "data/ch07.json",
+      "icon": "⚙️",
+      "name": "Kế toán tập hợp chi phí sản xuất và tính giá thành",
+      "desc": "Tập hợp chi phí NVL, nhân công, sản xuất chung; tính giá thành.",
+      "totalQuestions": 100,
+      "tcQuestions": 64,
+      "cdQuestions": 70,
+      "keyAccounts": [
+        "154",
+        "621",
+        "622",
+        "623",
+        "627"
+      ]
+    },
+    {
+      "stage": 8,
+      "file": "data/ch08.json",
+      "icon": "🛒",
+      "name": "Kế toán thành phẩm, bán hàng và xác định kết quả kinh doanh",
+      "desc": "Doanh thu, giảm trừ, giá vốn, xác định kết quả kinh doanh.",
+      "totalQuestions": 100,
+      "tcQuestions": 66,
+      "cdQuestions": 67,
+      "keyAccounts": [
+        "155",
+        "156",
+        "157",
+        "511",
+        "515",
+        "521",
+        "632",
+        "635",
+        "641",
+        "642",
+        "711",
+        "811",
+        "821",
+        "911"
+      ]
+    },
+    {
+      "stage": 9,
+      "file": "data/ch09.json",
+      "icon": "🤝",
+      "name": "Kế toán các khoản nợ phải thu",
+      "desc": "Bán chịu, thu nợ, khách hàng ứng trước, bù trừ công nợ.",
+      "totalQuestions": 89,
+      "tcQuestions": 65,
+      "cdQuestions": 47,
+      "keyAccounts": [
+        "131",
+        "133",
+        "136",
+        "138",
+        "141",
+        "229",
+        "244"
+      ]
+    },
+    {
+      "stage": 10,
+      "file": "data/ch10.json",
+      "icon": "🏦",
+      "name": "Kế toán vốn chủ sở hữu",
+      "desc": "Góp vốn, lợi nhuận chưa phân phối, trích lập quỹ.",
+      "totalQuestions": 100,
+      "tcQuestions": 66,
+      "cdQuestions": 67,
+      "keyAccounts": [
+        "411",
+        "412",
+        "413",
+        "414",
+        "418",
+        "419",
+        "421",
+        "441",
+        "461"
+      ]
+    },
+    {
+      "stage": 11,
+      "file": "data/ch11.json",
+      "icon": "📊",
+      "name": "Báo cáo tài chính trong doanh nghiệp",
+      "desc": "Cách lập, đọc và phân loại thông tin trên báo cáo tài chính.",
+      "totalQuestions": 104,
+      "tcQuestions": 68,
+      "cdQuestions": 71,
+      "keyAccounts": [
+        "111",
+        "112",
+        "121",
+        "128",
+        "131",
+        "152",
+        "154",
+        "155",
+        "156",
+        "211",
+        "214",
+        "215",
+        "229",
+        "242",
+        "331",
+        "332",
+        "333",
+        "338",
+        "341",
+        "352",
+        "411",
+        "421",
+        "511",
+        "632",
+        "821",
+        "911"
+      ]
+    }
+  ]
+}
